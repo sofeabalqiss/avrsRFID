@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: avrsRFID
+    runtime: docker
+    region: singapore
+    plan: free
+    dockerfilePath: ./Dockerfile
