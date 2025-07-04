@@ -1,0 +1,439 @@
+// Bootstrap
+@use 'bootstrap/scss/bootstrap' as *;
+@use 'variables' as *;
+
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+// Variables
+$primary-blue: #0066CC;
+$primary-hover: #004d99;
+$light-bg: #f8f9fa;
+$border-color: #e9ecef;
+$text-dark: #495057;
+$text-muted: #6c757d;
+$success-green: #28a745;
+$error-red: #dc3545;
+
+
+// ========================
+// GLOBAL STYLES
+// ========================
+body {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+  color: $text-dark;
+  background-color: #f5f7fa;
+  padding-top: 1rem;
+}
+
+// ========================
+// TABLE STYLES
+// ========================
+.table {
+  font-size: 0.925rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 0;
+
+  thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: $text-muted;
+    border-bottom: 1px solid $border-color;
+    white-space: nowrap;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #f8fafc;
+  }
+
+  tbody tr {
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: rgba($primary-blue, 0.02);
+    }
+  }
+
+  td {
+    vertical-align: middle;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+// Avatar styles
+.avatar-sm {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+// Badge styles
+.badge {
+  padding: 0.35em 0.65em;
+  font-weight: 500;
+  font-size: 0.75em;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+}
+
+// ========================
+// CARD STYLES
+// ========================
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+
+  .card-header {
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.5rem;
+  }
+
+  .card-footer {
+    background: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
+
+// ========================
+// PAGINATION STYLES
+// ========================
+.pagination {
+  margin-bottom: 0;
+
+  .page-item {
+    margin: 0 2px;
+
+    &.active .page-link {
+      background-color: $primary-blue;
+      border-color: $primary-blue;
+    }
+
+    .page-link {
+      color: $primary-blue;
+      border: 1px solid $border-color;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      border-radius: 4px;
+
+      &:hover {
+        color: $primary-hover;
+        background-color: $light-bg;
+      }
+    }
+  }
+}
+
+// ========================
+// BUTTON STYLES
+// ========================
+.btn {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    margin-right: 0.5rem;
+  }
+
+  &-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  &-outline-primary {
+    border-color: rgba($primary-blue, 0.3);
+
+    &:hover {
+      background-color: rgba($primary-blue, 0.1);
+      border-color: rgba($primary-blue, 0.5);
+    }
+  }
+
+  &-outline-danger {
+    border-color: rgba($error-red, 0.3);
+
+    &:hover {
+      background-color: rgba($error-red, 0.1);
+      border-color: rgba($error-red, 0.5);
+    }
+  }
+}
+
+// ========================
+// UTILITY CLASSES
+// ========================
+.fw-semibold {
+  font-weight: 600;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+// ========================
+// RESPONSIVE ADJUSTMENTS
+// ========================
+@media (max-width: 767.98px) {
+  .table-responsive {
+    border: 0;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    &::before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: $text-muted;
+      margin-right: 1rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .pagination {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: 1rem;
+
+    .input-group {
+      width: 100% !important;
+    }
+  }
+
+  // Add these sections to your existing app.scss file
+
+// ========================
+// ADMIN DASHBOARD STYLES
+// ========================
+
+// Dashboard Cards
+.dashboard-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .card-icon {
+      font-size: 1.5rem;
+      color: $primary-blue;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: $text-muted;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-value {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: $text-dark;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-footer {
+      background: transparent;
+      border-top: none;
+      padding-top: 0;
+      font-size: 0.75rem;
+      color: $text-muted;
+    }
+  }
+
+  // Chart Containers
+  .chart-container {
+    position: relative;
+    height: 100%;
+    min-height: 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0;
+        color: $text-dark;
+      }
+    }
+  }
+
+  // Peak Hours Chart Specific
+  #peakHoursChart {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  // Visitor Type Chart Specific
+  #visitorTypeChart {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  // Dashboard Grid Layout
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  // Dashboard Main Layout
+  .admin-dashboard {
+    padding: 1.5rem;
+
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      h1 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin-bottom: 0;
+        color: $text-dark;
+      }
+
+      .last-updated {
+        font-size: 0.875rem;
+        color: $text-muted;
+      }
+    }
+  }
+
+  // ========================
+  // ADMIN SPECIFIC UTILITIES
+  // ========================
+  .admin-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+
+    &-primary {
+      background-color: rgba($primary-blue, 0.1);
+      color: $primary-blue;
+    }
+
+    &-success {
+      background-color: rgba($success-green, 0.1);
+      color: $success-green;
+    }
+
+    &-warning {
+      background-color: rgba(255, 193, 7, 0.1);
+      color: #ffc107;
+    }
+
+    .chart-area, .chart-pie {
+        position: relative;
+        height: 400px; // Fixed height
+        width: 100%;
+      }
+
+      // For the pie chart container specifically
+      .card-body .chart-pie {
+        height: 300px;
+      }
+  }
+
+  // ========================
+  // RESPONSIVE ADJUSTMENTS
+  // ========================
+  @media (max-width: 767.98px) {
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+      min-height: 250px;
+    }
+
+    .admin-dashboard {
+      padding: 1rem;
+
+      .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  }
+
+  // Add this at the end to override any conflicting styles
+  .admin-wrapper {
+    .card {
+      border: none;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+    }
+
+    .table-responsive {
+      border-radius: 8px;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+    }
+  }
+}

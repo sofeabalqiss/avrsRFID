@@ -1,0 +1,24 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@popperjs/core": "^2.11.6",
+        "axios": "^1.9.0",
+        "bootstrap": "^5.2.3",
+        "laravel-vite-plugin": "^1.0.0",
+        "sass": "^1.56.1",
+        "vite": "^6.2.5"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.7.2",
+        "chart.js": "^4.4.9",
+        "laravel-echo": "^2.1.0",
+        "lodash": "^4.17.21",
+        "pusher-js": "^8.4.0",
+        "vue": "^3.5.13"
+    }
+}
